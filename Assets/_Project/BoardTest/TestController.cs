@@ -15,7 +15,7 @@ public class TestController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.L))
         {
-            diceRoll = dice.Roll();
+            dice.Roll();
             boardCreator.AdvancementAmount = diceRoll;
             Debug.Log("Dice Roll: " + diceRoll);                
         }
