@@ -16,10 +16,10 @@ public class Peg : MonoBehaviour
     public PlayerColors color { get; set; }
 
 
-    private bool Clickable => true;
+	public bool clickable = false;
     public void OnClick()
     {
-        if (Clickable)
+        if (clickable && boardReference.diceRollable == false)
         {
             bool success = boardReference.AdvancePegPosition(this);
         }
