@@ -6,6 +6,7 @@ public class Peg : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     public BoardCreator boardReference { get; set; }
     public Slot slotReference { get; set; }
+    [SerializeField] private Destinator destinator;
 
     private void Start()
     {
@@ -22,5 +23,10 @@ public class Peg : MonoBehaviour
         {
             bool success = boardReference.AdvancePegPosition(this);
         }
+    }
+
+    public void Move(Vector3 newPosition)
+    {
+        destinator.Move(newPosition);
     }
 }
