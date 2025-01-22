@@ -9,7 +9,7 @@ public class Slot : MonoBehaviour
         if(peg != null && peg.slotReference != null) peg.slotReference.Clear();
         this.peg = peg;
         peg.slotReference = this;
-        peg.transform.position = transform.position;
+        peg.Move(transform.position);
     }
 
     public void SendPegHome()
