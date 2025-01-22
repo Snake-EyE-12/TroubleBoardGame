@@ -11,13 +11,16 @@ public class TestController : MonoBehaviour
         boardCreator.Build();
     }
     private int diceRoll;
+
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            diceRoll = dice.Roll();
-            boardCreator.AdvancementAmount = diceRoll;
-            Debug.Log("Dice Roll: " + diceRoll);                
-        }
+        
     }
+
+    public void OnButtonClicked()
+    {
+		diceRoll = dice.Roll();
+		boardCreator.AdvancementAmount = diceRoll;
+		Debug.Log("Dice Roll: " + diceRoll);
+	}
 }
