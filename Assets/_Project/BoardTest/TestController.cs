@@ -12,6 +12,7 @@ public class TestController : MonoBehaviour
 		boardCreator.PlayerCount = 4;
 		boardCreator.Build();
 
+		boardCreator.ChangeTurn();
 		boardCreator.SetClickablePegs();
 	}
     public void OnButtonClicked()

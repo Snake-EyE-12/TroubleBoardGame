@@ -14,12 +14,13 @@ public class Dice : MonoBehaviour
     [SerializeField] private GameObject highlight;
     private bool rolling;
     private int rolledNumber;
-    public void Roll()
+    public int Roll()
     {
         rolledNumber = GetRandomInRange();
         Debug.Log("RolledNumber: " + rolledNumber);
         rolling = true;
         highlight.SetActive(false);
+        return rolledNumber;
     }
 
     private int GetRandomInRange()
@@ -67,10 +68,5 @@ public class Dice : MonoBehaviour
     {
         spriteRenderer.sprite = sprites[number - 1];
     }
-
-    public int GetRoll()
-    {
-        if (rolling) return 0;
-        return rolledNumber;
-    }
+    
 }

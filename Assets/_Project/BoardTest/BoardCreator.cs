@@ -10,7 +10,7 @@ public class BoardCreator : MonoBehaviour
 
 	public bool diceRollable = true;
 	private List<Peg> pegs = new();
-	private int currentPlayerTurn = 0;
+	private int currentPlayerTurn = 3;
 
 	public void Build()
     {   
@@ -62,8 +62,8 @@ public class BoardCreator : MonoBehaviour
         }
         newSlot.SetPeg(peg);
 
-        SetClickablePegs();
         ChangeTurn();
+        SetClickablePegs();
 
 		return true;
     }
@@ -107,21 +107,20 @@ public class BoardCreator : MonoBehaviour
 
 	public void SetClickablePegs()
 	{
-        Debug.Log("current turn: " + currentPlayerTurn);
 
 		foreach (Peg peg in pegs)
 		{
-			if ((int)peg.color == currentPlayerTurn) peg.clickable = true;
-			else peg.clickable = false;
+            peg.clickable = (int)peg.color == currentPlayerTurn;
 		}
 	}
 
 	public void ChangeTurn()
-	{
-		currentPlayerTurn += 1;
-		if (currentPlayerTurn > 3) currentPlayerTurn = 0;
-
-		Debug.Log("CurrentPlayerTurn: " + currentPlayerTurn);
+    {
         diceRollable = true;
+        if (AdvancementAmount == 6) return;
+		currentPlayerTurn++;
+		if (currentPlayerTurn > 3) currentPlayerTurn = 0;
+        turnRenderer.SetColor(Utils.PlayerColorToRGB((PlayerColors)currentPlayerTurn));
 	}
+    [SerializeField] private TurnRenderer turnRenderer;
 }
