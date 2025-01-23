@@ -119,8 +119,9 @@ public class BoardCreator : MonoBehaviour
         diceRollable = true;
         if (AdvancementAmount == 6) return;
 		currentPlayerTurn++;
-		if (currentPlayerTurn > 3) currentPlayerTurn = 0;
+		if (currentPlayerTurn > PlayerCount - 1) currentPlayerTurn = 0;
         turnRenderer.SetColor(Utils.PlayerColorToRGB((PlayerColors)currentPlayerTurn));
 	}
+
     [SerializeField] private TurnRenderer turnRenderer;
-}
+}   
