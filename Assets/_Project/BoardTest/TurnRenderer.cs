@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class TurnRenderer : MonoBehaviour
 {
-    [SerializeField] private Image image;
+    [SerializeField] private SpriteRenderer sprite;
     public void SetColor(Color color)
     {
-        image.color = color;
+		sprite.color = color;
     }
 }
