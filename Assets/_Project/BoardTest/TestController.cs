@@ -5,22 +5,24 @@ public class TestController : MonoBehaviour
     [SerializeField] private BoardCreator boardCreator;
     [SerializeField] private Dice dice;
 
-    private void Start()
-    {
-        boardCreator.PlayerCount = 4;
-        boardCreator.Build();
-    }
-    private int diceRoll;
+	private int diceRoll;
+	
+	private void Start()
+	{
+		boardCreator.PlayerCount = 4;
+		boardCreator.Build();
 
-    private void Update()
-    {
-
-    }
-
+		boardCreator.SetClickablePegs();
+	}
     public void OnButtonClicked()
     {
-		diceRoll = dice.Roll();
-		boardCreator.AdvancementAmount = diceRoll;
-		Debug.Log("Dice Roll: " + diceRoll);
+		if (boardCreator.diceRollable)
+		{
+			diceRoll = dice.Roll();
+			boardCreator.AdvancementAmount = diceRoll;
+			Debug.Log("Dice Roll: " + diceRoll);
+			boardCreator.diceRollable = false;
+		}
+		
 	}
 }

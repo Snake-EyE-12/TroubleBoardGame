@@ -8,11 +8,15 @@ public class BoardCreator : MonoBehaviour
     [SerializeField] private Peg pegPrefab;
     private List<Sector> sectors = new();
 
-    public void Build()
-    {
+	public bool diceRollable = true;
+	private List<Peg> pegs = new();
+	private int currentPlayerTurn = 0;
+
+	public void Build()
+    {   
         BuildBoard();
         BuildPlayers();
-    }
+	}
 
     private void BuildPlayers()
     {
@@ -41,6 +45,7 @@ public class BoardCreator : MonoBehaviour
             peg.color = color;
             peg.boardReference = this;
             sectors[sectorIndex].CreatePegs(peg, i);
+            pegs.Add(peg);
         }
         
     }
@@ -56,7 +61,11 @@ public class BoardCreator : MonoBehaviour
             newSlot.SendPegHome();
         }
         newSlot.SetPeg(peg);
-        return true;
+
+        SetClickablePegs();
+        ChangeTurn();
+
+		return true;
     }
 
     private Slot FindNextSlot(Slot slot, PlayerColors color, int amount)
@@ -95,4 +104,24 @@ public class BoardCreator : MonoBehaviour
         sector.sectorIndex = sectors.Count;
         sectors.Add(sector);
     }
+
+	public void SetClickablePegs()
+	{
+        Debug.Log("current turn: " + currentPlayerTurn);
+
+		foreach (Peg peg in pegs)
+		{
+			if ((int)peg.color == currentPlayerTurn) peg.clickable = true;
+			else peg.clickable = false;
+		}
+	}
+
+	public void ChangeTurn()
+	{
+		currentPlayerTurn += 1;
+		if (currentPlayerTurn > 3) currentPlayerTurn = 0;
+
+		Debug.Log("CurrentPlayerTurn: " + currentPlayerTurn);
+        diceRollable = true;
+	}
 }
