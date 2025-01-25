@@ -23,7 +23,7 @@ public class BoardCreator : MonoBehaviour
         for (int i = 0; i < PlayerCount; i++)
         {
             int sectorIndex = GetSectorIndexForPlayerCount(i);
-            BuildPegs(sectorIndex, (PlayerColors)i);
+            BuildPegs(sectorIndex, (PlayerColors)sectorIndex);
         }
     }
 
@@ -122,10 +122,22 @@ public class BoardCreator : MonoBehaviour
         }
         diceRollable = true;
         if (AdvancementAmount == 6) return;
-		currentPlayerTurn++;
-		if (currentPlayerTurn > PlayerCount - 1) currentPlayerTurn = 0;
+        ProgressTurn();
         turnRenderer.SetColor(Utils.PlayerColorToRGB((PlayerColors)currentPlayerTurn));
 	}
+
+    private void ProgressTurn()
+    {
+        if (PlayerCount > 2)
+        {
+            currentPlayerTurn++;
+            if (currentPlayerTurn > PlayerCount - 1) currentPlayerTurn = 0;
+            return;
+        }
+
+        if (currentPlayerTurn == 0) currentPlayerTurn = 2;
+        else currentPlayerTurn = 0;
+    }
     [SerializeField] private TurnRenderer turnRenderer;
     [SerializeField] private WinSetter winSetter;
 

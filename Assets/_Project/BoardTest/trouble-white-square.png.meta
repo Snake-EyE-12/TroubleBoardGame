@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      trouble-white-square_0: 6306949092379690093
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
