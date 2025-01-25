@@ -983,6 +983,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1607571410}
   - component: {fileID: 1607571411}
+  - component: {fileID: 1607571412}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -1023,6 +1024,19 @@ MonoBehaviour:
   pegPrefab: {fileID: 4318658974835776863, guid: 4532d255a712baf4cb16a60ca0ec71d0, type: 3}
   diceRollable: 1
   turnRenderer: {fileID: 1092542155}
+  winSetter: {fileID: 1607571412}
+--- !u!114 &1607571412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607571409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e841c99e88bfb48a87f8c65fd9d62a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1964396036
 GameObject:
   m_ObjectHideFlags: 0

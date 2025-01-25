@@ -116,12 +116,18 @@ public class BoardCreator : MonoBehaviour
 
 	public void ChangeTurn()
     {
+        if (sectors[currentPlayerTurn].HasGoalFilled())
+        {
+            winSetter.SetWinner((PlayerColors)currentPlayerTurn);
+        }
         diceRollable = true;
         if (AdvancementAmount == 6) return;
 		currentPlayerTurn++;
 		if (currentPlayerTurn > PlayerCount - 1) currentPlayerTurn = 0;
         turnRenderer.SetColor(Utils.PlayerColorToRGB((PlayerColors)currentPlayerTurn));
 	}
-
     [SerializeField] private TurnRenderer turnRenderer;
-}   
+    [SerializeField] private WinSetter winSetter;
+
+
+}

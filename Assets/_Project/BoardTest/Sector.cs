@@ -13,6 +13,17 @@ public class Sector : MonoBehaviour
         homePositions[homePos].SetPeg(peg);
     }
 
+    public bool HasGoalFilled()
+    {
+        int count = 0;
+        foreach (var goalPos in goalPositions)
+        {
+            if(goalPos.HasPiece) count++;
+        }
+
+        return count >= 4;
+    }
+
     public bool Contains(Slot slot, int amount, PlayerColors currentPegColor, Sector nextSector, out Slot placement)
     {
         if (homePositions.Contains(slot))
