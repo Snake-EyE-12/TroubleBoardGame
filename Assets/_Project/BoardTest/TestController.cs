@@ -9,9 +9,14 @@ public class TestController : MonoBehaviour
 	
 	private void Start()
 	{
-		boardCreator.PlayerCount = 4;
+		boardCreator.PlayerCount = MainMenuManager.playerCount;
 		boardCreator.Build();
 
+		PassTurn();
+	}
+
+	public void PassTurn()
+	{
 		boardCreator.ChangeTurn();
 		boardCreator.SetClickablePegs();
 	}

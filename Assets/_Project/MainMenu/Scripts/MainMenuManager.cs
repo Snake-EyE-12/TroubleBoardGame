@@ -1,11 +1,12 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] GameObject mainMenuBtns;
     [SerializeField] GameObject playerSelectBtns;
-    static int playerCount;
+    public static int playerCount;
     public void StartGameButton()
     {
         mainMenuBtns.SetActive(false);
@@ -21,6 +22,7 @@ public class MainMenuManager : MonoBehaviour
     public void PlayerCountSelection(int playerNum)
     {
         playerCount = playerNum;
+        SceneManager.LoadScene("Board");
     }
     
     public void QuitGameButton()
