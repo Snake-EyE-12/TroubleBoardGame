@@ -28,7 +28,9 @@ public class MainMenuManager : MonoBehaviour
     public void QuitGameButton()
     {
         //Exits the play mode when run in the editor
+        #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
+        #endif
         //Exits the game
         Application.Quit();
     }
