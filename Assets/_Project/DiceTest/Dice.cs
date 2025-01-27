@@ -20,8 +20,12 @@ public class Dice : MonoBehaviour
         Debug.Log("RolledNumber: " + rolledNumber);
         rolling = true;
         highlight.SetActive(false);
+        sourceAudio.Play();
         return rolledNumber;
     }
+
+    [SerializeField] private AudioSource sourceAudio;
+
 
     private int GetRandomInRange()
     {

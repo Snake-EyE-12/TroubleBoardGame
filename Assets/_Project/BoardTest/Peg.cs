@@ -19,12 +19,17 @@ public class Peg : MonoBehaviour
 	public bool clickable = false;
     public void OnClick()
     {
-        if (clickable && boardReference.diceRollable == false)
+        if (clickable && !boardReference.diceRollable)
         {
             bool success = boardReference.AdvancePegPosition(this);
+            if (success)
+            {
+                sourceAudio.Play();
+            }
         }
     }
 
+    [SerializeField] private AudioSource sourceAudio;
     public void Move(Vector3 newPosition)
     {
         destinator.Move(newPosition);
