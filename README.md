@@ -7,7 +7,8 @@ This project is a digital recreation of the "Trouble" board game, developed usin
 # Gameplay Overview
 In "Trouble," players race to move all four of their colored pegs from their "Home" position to the "Finish" area. Movement is determined by rolling a die, and players must navigate their pegs around the board while attempting to send opponents' pegs back to their starting positions by landing on them. The first player to successfully move all their pegs to the "Finish" wins the game.
 
-For detailed rules and instructions, you can refer to the official game rules provided by Hasbro. 
+For detailed rules and instructions, you can refer to the official game rules provided by Hasbro.
+
 [HASBRO TOYS](https://www.hasbro.com/common/instruct/trouble.pdf)
 
 # Features
