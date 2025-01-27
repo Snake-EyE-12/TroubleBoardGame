@@ -19,7 +19,7 @@ Interactive Interface: User-friendly design with intuitive controls.
 ## Download
 Download from the Itch.io page here: 
 
-## Contributors
+## Collaborators
 - Chase Guymon
 - Jayden Smith
 - John Roberts
