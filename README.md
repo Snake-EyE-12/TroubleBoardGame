@@ -1,7 +1,6 @@
 # TroubleBoardGame
-Recreating the classic board game "Trouble" in a digital format.
 
-# About
+## About
 This project is a digital recreation of the "Trouble" board game, developed using Unity. The aim is to provide an interactive and engaging experience that mirrors the original gameplay.
 
 # Gameplay Overview
