@@ -1,5 +1,8 @@
 # VirtualTroubleGame
  Recreating Trouble
 
-Colaborators:
-Chase Guymon
+Collaborators:
+- Chase Guymon
+- Jayden Smith
+- John Roberts
+- Joseph McNelis
